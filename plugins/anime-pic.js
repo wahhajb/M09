@@ -13,7 +13,7 @@ let handler = async (m, {
     if (!res.ok) throw await res.text()
     let json = await res.json()
     if (!json.url) throw 'Error!'
-    await conn.sendFile(m.chat, json.url, null, "*『🔥┇𝙼𝙴𝙶𝙾-𝙱𝙾𝚃』*", m)
+    await conn.sendFile(m.chat, json.url, null, "*『🔥┇GOKU-𝙱𝙾𝚃』*", m)
 }
 handler.help = ['waifu']
 handler.tags = ['internet']
