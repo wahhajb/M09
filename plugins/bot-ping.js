@@ -22,12 +22,12 @@ const handler = async (m, { conn, usedPrefix }) => {
   const old = performance.now();
   const neww = performance.now();
   const rtime = (neww - old).toFixed(7);
-  const wm = 'The mego Bot';
+  const wm = 'The 𝑮𝒐𝒌𝒖 Bot';
   const info = ` _*< معلومات - البوت />*_
 
- ▢ *المطور.:* ميججؤؤ لفآججر 👾
- ▢ *رقم المطور:* wa.me/+201012531172
- ▢ *دعم:* https://chat.whatsapp.com/HiP4wq4KssO50q78Wacv0J
+ ▢ *المطور.:*𝓐𝓜𝓡𝓞 𝓚𝓗𝓐𝓛𝓘𝓓 👾
+ ▢ *رقم المطور:* wa.me/+967774318278
+ ▢ *دعم:* 
 
  ▢ *بينغ:* ${rtime}
  ▢ *وقت التشغيل:* ${uptime}
