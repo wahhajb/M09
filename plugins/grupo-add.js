@@ -23,7 +23,7 @@ const handler = async (m, {conn, text, participants, args}) => {
       const invite_code_exp = content.attrs.expiration;
       const teks = `*[❗معلومه❗]لايوجد اعلان حاليا @${jid.split('@')[0]}, أضف الرقم الذي أدخلته، قد يحدث هذا لأن الرقم غير صحيح، أو أن الشخص غادر المجموعة مؤخرًا، أو أن الشخص غادر المجموعة مؤقتًا، أو أن الشخص قد قام بتغيير خصوصية المجموعة. أنصحك بالتحقق من الدعوة يدويًا*`;
       m.reply(teks, null, {mentions: conn.parseMention(teks)});
-      const captionn = `🚩 مرحبا انا ميجو لقد تم دعوتك اللي الجروب لذالك قمت بارسال الرابط اليك !!`;
+      const captionn = `🚩 مرحبا انا غوكو لقد تم دعوتك اللي الجروب لذالك قمت بارسال الرابط اليك !!`;
       const messaa = await prepareWAMessageMedia({image: jpegThumbnail}, {upload: conn.waUploadToServer});
       const groupInvite = generateWAMessageFromContent(m.chat, proto.Message.fromObject({groupInviteMessage: {groupJid: m.chat, inviteCode: invite_code, inviteExpiration: invite_code_exp, groupName: await conn.getName(m.chat), caption: captionn, jpegThumbnail: jpegThumbnail}}), {userJid: jid});
       await conn.relayMessage(jid, groupInvite.message, {messageId: groupInvite.key.id});
