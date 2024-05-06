@@ -1,4 +1,4 @@
-const toxicRegex = /كسمك|خول|عرص|متنام|امك|احا|mrd|يمتناك|اختك|maricon/i
+const toxicRegex = /كسمك|خول|عرص|متناك|كس|fuck|قحبة|خول|mrd|يمتناك|اختك|maricon/i
 
 export async function before(m, {isAdmin, isOwner}) {
 if (m.isBaileys && m.fromMe) return !0
