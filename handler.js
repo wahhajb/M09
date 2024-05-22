@@ -532,8 +532,8 @@ for (let cs of callUpdate) {
 if (cs.isGroup == false) {
 if (cs.status == "offer") {
 let callmsg = await this.reply(nk.from, `مرحبا *@${cs.from.split('@')[0]}*, Las ${cs.isVideo ? 'videollamadas' : 'llamadas'} ممنوع الاتصال وسيتم حظرك`, false, { mentions: [cs.from] })
-let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;mego 👑;;;\nFN:Azami\nORG:Azami 👑\nTITLE:\nitem1.TEL;waid=+201012531172:+201012531172\nitem1.X-ABLabel:mego 👑\nX-WA-BIZ-DESCRIPTION:Solo cosas del bot.\nX-WA-BIZ-NAME:mego 👑\nEND:VCARD`
-await this.sendMessage(cs.from, { contacts: { displayName: 'mego 👑', contacts: [{ vcard }] }}, {quoted: callmsg})
+let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;𝑮𝒐𝒌𝒖 👑;;;\nFN:Azami\nORG:Azami 👑\nTITLE:\nitem1.TEL;waid=+967774318278:+967774318278\nitem1.X-ABLabel:𝑮𝒐𝒌𝒖 👑\nX-WA-BIZ-DESCRIPTION:Solo cosas del bot.\nX-WA-BIZ-NAME:𝑮𝒐𝒌𝒖 👑\nEND:VCARD`
+await this.sendMessage(cs.from, { contacts: { displayName: '𝑮𝒐𝒌𝒖 👑', contacts: [{ vcard }] }}, {quoted: callmsg})
 await this.updateBlockStatus(cs.from, 'block')
 }}}
 }
@@ -573,7 +573,7 @@ group: '*¡➺الميزه دي فالجروبات فقط🔰!*',
 private: '*¡➺الامر دا للخاص فقط🔰!*',
 admin: '*¡➺الامر دا لاادمن فقط🔰!*',
 botAdmin: '*¡➺يجب رفع البوت ادمن🔰!*',
-unreg: '*¡يجب التسجيل لاستخدام الامر يحب!*\n\n!تسجيل الاسم.العمر\n\n*الاستخدام الصحيح* : !تسجيل ميجو.17',
+unreg: '*¡يجب التسجيل لاستخدام الامر يحب!*\n\n!تسجيل الاسم.العمر\n\n*الاستخدام الصحيح* : !تسجيل غوكو.17',
 restrict: '*¡الميزه معطله من قبل المطور!*'
 }[type]
 if (msg) return conn.reply(m.chat, msg, m, { contextInfo:{ externalAdReply: {title: '🎄'  + saludo + ' ' + nombre, body: dev, sourceUrl: global.channel, thumbnailUrl: fotos }}})
