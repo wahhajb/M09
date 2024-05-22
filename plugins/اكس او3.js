@@ -5,6 +5,6 @@ const handler = async (m, {conn, usedPrefix, command}) => {
   delete conn.game[room.id];
   await m.reply('*[✔] تم حذف اللعبة بنجاح*');
 };
-handler.command = /^(delttt|deltt|كنسل|deltictactoe)$/i;
+handler.command = /^(delttt|استسلم|deltt|كنسل|deltictactoe)$/i;
 handler.fail = null;
 export default handler;
