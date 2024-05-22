@@ -20,10 +20,10 @@ global.rosas = fs.readFileSync('./storage/imagenes/rosas.jpg')
 global.refran = fs.readFileSync('./storage/imagenes/refran.jpg')
 global.linksjpg = fs.readFileSync('./storage/imagenes/Links.jpg')
 
-var img = 'https://telegra.ph/file/e59f3edc315f507402cd2.jpg'; var img1 = 'https://telegra.ph/file/8779a165cc3d43a1d99f4.jpg'; var img3 = 'https://telegra.ph/file/066e5c8832970e93ff312.jpg'; var img4 = 'https://telegra.ph/file/562e70316f30a9437ab16.jpg'; var img5 = 'https://telegra.ph/file/923496bc59defa3f0542c.jpg'
-var img6 = 'https://telegra.ph/file/be4508ee551860ecc202d.jpg'
+var img = 'https://telegra.ph/file/cf3ff642dd9eb7b209e36.jpg'; var img1 = 'https://telegra.ph/file/cf3ff642dd9eb7b209e36.jpg'; var img3 = 'https://telegra.ph/file/6ec4f60597e6bfc7ba842.jpg'; var img4 = 'https://telegra.ph/file/6ec4f60597e6bfc7ba842.jpg'; var img5 = 'https://telegra.ph/file/d1b9d275747a0c2258b35.jpg'
+var img6 = 'https://telegra.ph/file/8c36f14a6be04e0f41d09.jpg'
 //Navideñas
-var img2 = 'https://telegra.ph/file/066e5c8832970e93ff312.jpg'
+var img2 = 'https://telegra.ph/file/ee546cc75ebe214d5cf47.jpg'
 
 global.sityImg = [img, img1, img2, img3, img4, img5, img6]
 
@@ -45,9 +45,9 @@ global.linkSity = [yt, ig, md, paypal, git, channel, channel2]
 
 //Raíz
 global.raiz = './'
-global.aniD = 'mego md/'
+global.aniD = 'goku md/'
 global.dirP = raiz//+aniD
-global.authFile = join(__dirname, `mego md/`)
+global.authFile = join(__dirname, `goku md/`)
 global.authFileRespald = join(__dirname, `sesionRespaldo/`)
 global.temp = join(__dirname, 'tmp')
 global.media = raiz+'media/'
