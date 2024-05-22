@@ -14,7 +14,7 @@ let handler = async (m, { conn, participants }) => {
      } : db.data.chats[jid].expired ? msToDate(db.data.chats[jid].expired - now) : 'مجموعة منتهية الصلاحية غير منظمة'} 
  ${db.data.chats[jid].welcome ? '✅' : '❌'} *الترحيب التلقائي*
  ${db.data.chats[jid].antiLink ? '✅' : '❌'} *الروابط المضادة*\n\n` 
-     m.reply(`*📑 قائمه الجروبات ميجو بداخلها:*
+     m.reply(`*📑 قائمه الجروبات غوكو بداخلها:*
 *🚀 مجموع الجروبات:* ${groups.length} 
   
  ${txt} 
