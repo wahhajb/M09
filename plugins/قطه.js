@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
  let res = await fetch('https://cataas.com/cat') 
  let img = await res.buffer() 
  let caption = ` 
-  『🔥┇MEGO-𝙱𝙾𝚃』
+  『🔥┇𝑮𝒐𝒌𝒖-𝙱𝙾𝚃』
  `.trim() 
  conn.sendFile(m.chat, img, 'cat.jpg', caption, m) 
  } catch (e) { 
