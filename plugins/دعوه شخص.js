@@ -1,6 +1,6 @@
 
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-if (!text) throw `*اكــتـب الـرقـم الـذي تـريـد ارســال لـه الـدعوه !*\n*مــثـال :\n*${usedPrefix + command}* 201012531172`
+if (!text) throw `*اكــتـب الـرقـم الـذي تـريـد ارســال لـه الـدعوه !*\n*مــثـال :\n*${usedPrefix + command}*967774318278`
 if (text.includes('+')) throw  `*لا تــضـع هـذه الـعـلـامـه +*`
 if (isNaN(text)) throw '*دخــل الـرقـم بـدـون مـسافـات !*'
 let group = m.chat
