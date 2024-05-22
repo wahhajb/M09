@@ -4,7 +4,7 @@ if (!m.quoted) throw `*⚠️رد ع فيديو لتحويله جيفgif*`
 const q = m.quoted || m
 const mime = (q.msg || q).mimetype || ''
 if (!/(mp4)/.test(mime)) throw `*⚠️ تشابه ${mime} غير مدعوم*` 
-m.reply('*🚀 تم التحويل بوساطه ميجو*')
+m.reply('*🚀 تم التحويل بوساطه غوكو*')
 const media = await q.download()
 conn.sendMessage(m.chat, {video: media, gifPlayback: true, caption: '*🚀🚀*'}, {quoted: m})
 
