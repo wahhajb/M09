@@ -13,10 +13,10 @@ let handler = async (m) => {
                             }
                           }
                         }
-m.reply(`*${global.db.data.users[who].diamond} Límite restante (⁠≧⁠▽⁠≦⁠)*`)
+m.reply(`*${global.db.data.users[who].diamond} الحد المتبقي (⁠≧⁠▽⁠≦⁠)*`)
 
 }
 handler.help = ['limit [@user]']
 handler.tags = ['rg']
-handler.command = /^(limit)$/i
+handler.command = /^(limit|حد)$/i
 export default handler
