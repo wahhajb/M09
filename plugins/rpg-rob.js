@@ -5,7 +5,7 @@ let d = 20
 let handler = async (m, {conn, text, usedPrefix, command, groupMetadata}) => {
   let time = global.db.data.users[m.sender].lastrob + 1800000;
   if (new Date() - global.db.data.users[m.sender].lastrob < 1800000) throw `*⏰ ESPERA ${msToTime(time - new Date())} PARA VOLVER A ROBAR*`;
-  if (!text) return m.reply(`*➳ ETIQUETA AL USUARIO QUE QUIERE SAQUEAR*\n\n*EJEMPLO:* ${usedPrefix + command} @tɑg>.`);
+  if (!text) return m.reply(`*➳ ضع منشن لشخص الذي تريد النهب منه*\n\n*مثل:* ${usedPrefix + command} @tɑg>.`);
   try { 
     let _user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender;
     if (!_user in global.db.data.users) return m.reply(`➳ المستخدم غير مسجل في قاعدة البيانات!`);
@@ -43,7 +43,7 @@ let handler = async (m, {conn, text, usedPrefix, command, groupMetadata}) => {
 
 handler.help = ["saquear [@user]"];
 handler.tags = ['rg']
-handler.command = /^(raidear|rob|robar)$/i;
+handler.command = /^(raidear|rob|نهب|سرقه|robar)$/i;
 handler.group = true;
 handler.cooldown = cooldown;
 export default handler;
