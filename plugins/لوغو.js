@@ -3,7 +3,7 @@ import cheerio from "cheerio";
 import FormData from "form-data";
 const split = '|';
 const handler = async (m, {conn, args: [effect], text: txt, usedPrefix, command, name}) => {
-  if (!effect) throw '*[❗معلومه❗] ¿لاستخدام الامر اكتب ?*\n—◉ _#logo (اسم اللوغو) (اسمك)_\n*مثال:*\n—◉ #logo 3d-deep-sea-metal mego\n\n*[❗]يمكنك وضع اسمين منفصلين بالصوره عبر :*\n—◉ _#logo (اسم اللوغو) (الاسم الاول|الاسم التاني)_\n*مثال:*\n—◉ _#logo Wolf-Logo-Galaxy mego|Bot_\n\n*<اسماء اللوغو الموجوده/>*\n\n° ඬ⃟📝 #logo ' + effects.map((v) => v.title).join('\n° ඬ⃟📝 #logo ');
+  if (!effect) throw '*[❗معلومه❗] ¿لاستخدام الامر اكتب ?*\n—◉ _#logo (اسم اللوغو) (اسمك)_\n*مثال:*\n—◉ #logo 3d-deep-sea-metal 𝑮𝒐𝒌𝒖\n\n*[❗]يمكنك وضع اسمين منفصلين بالصوره عبر :*\n—◉ _#logo (اسم اللوغو) (الاسم الاول|الاسم التاني)_\n*مثال:*\n—◉ _#logo Wolf-Logo-Galaxy 𝑮𝒐𝒌𝒖|Bot_\n\n*<اسماء اللوغو الموجوده/>*\n\n° ඬ⃟📝 #logo ' + effects.map((v) => v.title).join('\n° ඬ⃟📝 #logo ');
   if (!effects.find((v) => (new RegExp(v.title, 'gi')).test(effect))) throw `*[❗معلومه❗] الطلب ${effect} ليس موجود لدي*`;  
   let text = txt.replace(new RegExp(effect, 'gi'), '').trimStart();
   if (text.includes(split)) {
