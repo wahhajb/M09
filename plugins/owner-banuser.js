@@ -6,7 +6,7 @@ if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
 else who = m.chat
 let users = global.db.data.users
 users[who].banned = true
-m.reply('*⏤͟͟͞͞🚯تم حظر هذا المستخدم بنجاح*\n\n*[🔒] لم تعد بأمكانك استخدام ميجو بوت*')    }
+m.reply('*⏤͟͟͞͞🚯تم حظر هذا المستخدم بنجاح*\n\n*[🔒] لم تعد بأمكانك استخدام غوكو بوت*')    }
 handler.tags = ['owner']
 handler.command = /^بان$/i
 handler.rowner = true
