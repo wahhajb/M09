@@ -21,7 +21,7 @@ let handler = async (m, { conn, text }) => {
 ]
 await conn.sendMessage(m.chat, { text: `*┏━━━━━━━━━━━━━━┓*\n┃هل تريد نسخ الوصف ؟ •🌷\n*┗━━━━━━━━━━━━━━┛*`, templateButtons: botones, footer: wm })
 }
-handler.command = /^فحص$/i
+handler.command = /^(فحص|افحص)$/i
 
 export default handler
 handler.owner = false
