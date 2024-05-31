@@ -69,7 +69,7 @@ const handler = async (m, { conn, usedPrefix }) => {
         mediaUrl: "https://chat.whatsapp.com/HiP4wq4KssO50q78Wacv0J",
         mediaType: 2,
         previewType: "pdf",
-        title: "The mego - Bot",
+        title: "The goku - Bot",
         body: "Repositorio - GitHub",
         thumbnail: imagen1,
         sourceUrl: "https://chat.whatsapp.com/HiP4wq4KssO50q78Wacv0J",
