@@ -4,7 +4,7 @@ let url = yh[Math.floor(Math.random() * yh.length)]
 //conn.sendMessage(m.chat, { image: { url: url }, caption: "💕💕💕💕" }, { quoted: m });
 conn.sendButton(m.chat, `💕💕💕💕`.trim(), wm, url, [['𝙎𝙄𝙂𝙐𝙄𝙀𝙉𝙏𝙀 | 𝙉𝙀𝙓𝙏 🆕', `/${command}`]], null, null, m)
 }
-handler.command = /^(loli2)$/i
+handler.command = /^(loli2|لولي2)$/i
 handler.tags = ['anime']
 handler.help = ['loli2']
 export default handler 
