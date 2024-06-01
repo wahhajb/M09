@@ -3,7 +3,7 @@ const handler = async (m, {conn, text, command}) => {
   const url = yh[Math.floor(Math.random() * yh.length)];
   conn.sendMessage(m.chat, {image: {url: url}, caption: 'ʀᴀɴᴅᴏᴍ ʟᴏʟɪ - ɪѕ ᴄᴜᴛᴇ 🥺'}, {quoted: m});
 };
-handler.command = /^(loli)$/i;
+handler.command = /^(loli|لولي)$/i;
 handler.tags = ['anime'];
 handler.help = ['loli'];
 export default handler;
