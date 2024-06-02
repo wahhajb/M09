@@ -18,6 +18,6 @@ let handler = async (m, { conn, args, command }) => {
     }
 }
 
-handler.command = /^(football|كرة القدم|تاريخ كرة القدم)$/i
+handler.command = /^(football|كرة-القدم|تاريخ كرة القدم)$/i
 handler.group = false
 module.exports = handler
