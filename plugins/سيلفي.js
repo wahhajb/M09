@@ -1,23 +1,28 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { text, conn, usedPrefix, command }) => {
+  // التحقق من وجود النص أو الرد المقتبس
   if (!text && !(m.quoted && m.quoted.text)) {
     throw `*عيون سيلفي وش السالفة*`;
   }
 
+  // الحصول على النص من الرسالة المقتبسة إذا لم يكن النص موجودًا
   if (!text && m.quoted && m.quoted.text) {
     text = m.quoted.text;
   }
 
   try {
-    m.react(rwait)
+    // إرسال رسالة الانتظار
     const { key } = await conn.sendMessage(m.chat, {
       image: { url: 'https://telegra.ph/file/ffe1bb51bfa1b5c224bc9.jpg' },
       caption: 'جار الكتابة....'
-    }, {quoted: m})
+    }, { quoted: m });
+
+    // تحديث حالة الكتابة
     conn.sendPresenceUpdate('composing', m.chat);
     const prompt = encodeURIComponent(text);
 
+    // عنوان API الأول
     const guru1 = `${gurubot}/chatgpt?text=${prompt}&lang=ar`;
 
     try {
@@ -26,52 +31,44 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
       let result = data.result;
 
       if (!result) {
-
         throw new Error('حدث خطأ');
       }
 
-      await conn.relayMessage(m.chat, {
-        protocolMessage: {
-          key,
-          type: 14,
-          editedMessage: {
-            imageMessage: { caption: result }
-          }
-        }
-      }, {});
-      m.react(done);
+      await conn.sendMessage(m.chat, {
+        image: { url: 'https://telegra.ph/file/ffe1bb51bfa1b5c224bc9.jpg' },
+        caption: result,
+      }, { quoted: m });
+
     } catch (error) {
-      console.error('خطأ:', error);
+      console.error('خطأ في API الأول:', error);
 
-
-      const model = 'llama';
-      const senderNumber = m.sender.replace(/[^0-9]/g, ''); 
-      const session = `ارثر${senderNumber}`;
+      // عنوان API الثاني كبديل
       const guru2 = `https://ultimetron.guruapi.tech/gpt3?prompt=${prompt}`;
 
-      let response = await fetch(guru2);
-      let data = await response.json();
-      let result = data.completion;
+      try {
+        let response = await fetch(guru2);
+        let data = await response.json();
+        let result = data.completion;
 
-      await conn.relayMessage(m.chat, {
-        protocolMessage: {
-          key,
-          type: 14,
-          editedMessage: {
-            imageMessage: { caption: result }
-          }
-        }
-      }, {});
-      m.react(done);
+        await conn.sendMessage(m.chat, {
+          image: { url: 'https://telegra.ph/file/ffe1bb51bfa1b5c224bc9.jpg' },
+          caption: result,
+        }, { quoted: m });
+
+      } catch (error) {
+        console.error('خطأ في API الثاني:', error);
+        throw `*حدث خطأ أثناء جلب المعلومات.*`;
+      }
     }
 
   } catch (error) {
     console.error('Error:', error);
-    throw `*خطأ*`;
+    throw `*خطأ أثناء تنفيذ العملية.*`;
   }
 };
-handler.help = ['chatgpt']
-handler.tags = ['AI']
+
+handler.help = ['chatgpt'];
+handler.tags = ['AI'];
 handler.command = ['سيلفي', 'chatgpt', 'ai', 'gpt'];
 
 export default handler;
