@@ -19,7 +19,7 @@ conn.sendFile(m.chat, pp, 'error.jpg', texto, m, false, { mentions: [...groupAdm
 }
 handler.help = ['admins']
 handler.tags = ['grupo']
-handler.command = /^(admins|المشرفين|dmins)$/i
+handler.command = /^(admins|الادمان|dmins)$/i
 
 handler.group = true
 
