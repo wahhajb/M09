@@ -1,26 +1,24 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { text, conn, usedPrefix, command }) => {
-  // التحقق من وجود النص أو الرد المقتبس
   if (!text && !(m.quoted && m.quoted.text)) {
     throw `*عيون سيلفي وش السالفة*`;
   }
 
-  // الحصول على النص من الرسالة المقتبسة إذا لم يكن النص موجودًا
   if (!text && m.quoted && m.quoted.text) {
     text = m.quoted.text;
   }
 
   try {
+    const prompt = encodeURIComponent(text);
+
     // إرسال رسالة الانتظار
     const { key } = await conn.sendMessage(m.chat, {
       image: { url: 'https://telegra.ph/file/ffe1bb51bfa1b5c224bc9.jpg' },
       caption: 'جار الكتابة....'
     }, { quoted: m });
 
-    // تحديث حالة الكتابة
     conn.sendPresenceUpdate('composing', m.chat);
-    const prompt = encodeURIComponent(text);
 
     // عنوان API الأول
     const guru1 = `${gurubot}/chatgpt?text=${prompt}&lang=ar`;
@@ -35,9 +33,9 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
       }
 
       await conn.sendMessage(m.chat, {
-        image: { url: 'https://telegra.ph/file/ffe1bb51bfa1b5c224bc9.jpg' },
-        caption: result,
-      }, { quoted: m });
+        text: result,
+        quoted: m,
+      });
 
     } catch (error) {
       console.error('خطأ في API الأول:', error);
@@ -51,9 +49,9 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
         let result = data.completion;
 
         await conn.sendMessage(m.chat, {
-          image: { url: 'https://telegra.ph/file/ffe1bb51bfa1b5c224bc9.jpg' },
-          caption: result,
-        }, { quoted: m });
+          text: result,
+          quoted: m,
+        });
 
       } catch (error) {
         console.error('خطأ في API الثاني:', error);
