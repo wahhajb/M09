@@ -10,40 +10,41 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
   }
 
   try {
-    m.react(rwait)
-    const { key } = await conn.sendMessage(m.chat, {
+    const rwait = '🕒'; // رمز الانتظار
+    const done = '✅'; // رمز الانتهاء
+
+    await conn.sendMessage(m.chat, {
       image: { url: 'https://telegra.ph/file/cf3ff642dd9eb7b209e36.jpg' },
       caption: 'ثانيه افكر....⚡'
     }, { quoted: m });
+    
     conn.sendPresenceUpdate('composing', m.chat);
     const prompt = encodeURIComponent(text);
 
-    const model = 'llama';
-    const senderNumber = m.sender.replace(/[^0-9]/g, '');
-    const session = `𝑮𝒐𝒌𝒖_BOT_${senderNumber}`;
     const guru2 = `https://aemt.me/bard?text=${prompt}`;
 
     let response = await fetch(guru2);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     let data = await response.json();
     let result = data.completion;
+    if (!result) throw new Error('No completion found in the response.');
+
     let yourName = '𝐵𝑌:𝑮𝒐𝒌𝒖⚡𝐵𝑂𝑇'; // قم بتعيين اسمك هنا
 
-    await conn.relayMessage(m.chat, {
-      protocolMessage: {
-        key,
-        type: 14,
-        editedMessage: {
-          imageMessage: { caption: result + ' ' + yourName }
-        }
-      }
-    }, {});
-    m.react(done);
+    await conn.sendMessage(m.chat, {
+      text: result + ' ' + yourName
+    }, { quoted: m });
+
+    // تعيين رمز الانتهاء
+    // ملاحظة: يجب عليك توفير طريقة لتحديث الحالة إذا كان لديك دالة لهذا الغرض
+    // m.react(done);  // تأكد من أن لديك دالة لتحديث حالة الرسالة
 
   } catch (error) {
     console.error('خطأ:', error);
     throw `*[❗] خطأ، يرجى إدخال نص صحيح*`;
   }
 };
+
 handler.help = ['chats'];
 handler.tags = ['ذكاء اصناعي'];
 handler.command = ['goku', 'غوكو'];
