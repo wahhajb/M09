@@ -8,7 +8,7 @@ const handler = async (m, {conn, text, usedPrefix}) => {
     const result = anime.data[0];
     const resultes = await translate(`${result.background}`, {to: 'es', autoCorrect: true});
     const resultes2 = await translate(`${result.synopsis}`, {to: 'es', autoCorrect: true});
-    const AnimeInfo = `
+   const AnimeInfo = `
 🎀 • *العنوان:* ${result.title}
 🎋 • *التنسيق:* ${result.type}
 📈 • *الحالة:* ${result.status.toUpperCase().replace(/\_/g, ' ')}
@@ -24,7 +24,7 @@ const handler = async (m, {conn, text, usedPrefix}) => {
 ♦ • *الإعلان:* ${result.trailer.url}
 🌐 • *الرابط:* ${result.url}
 🎆 • *الخلفية:* ${resultes.text}
-❄ • *ملخص:* ${resultes2.text}}`;
+❄ • *ملخص:* ${resultes2.text}`;
     conn.sendFile(m.chat, result.images.jpg.image_url, 'error.jpg', AnimeInfo, m);
   } catch {
     throw `*[❗] خطأ، حاول مرة أخرى*`;
