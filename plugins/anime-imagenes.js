@@ -1,24 +1,26 @@
 import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 
-var handler = async (m, { conn, command }) => {
+const handler = async (m, { conn, command }) => {
+    const lolkeysapi = 'YOUR_API_KEY_HERE'; // قم بتعيين مفتاح الواجهة البرمجية الخاص بك هنا
 
-if (command == 'فانرت') {
-let fanart = await fetch(`https://api.lolhuman.xyz/api/random/art?apikey=${lolkeysapi}`)
-conn.sendMessage(m.chat, {image: fanart, caption: `*🧧 فانرت*`.trim()}, {quoted: m})
-m.react('🧧')
-}
+    if (command == 'فانرت') {
+        let fanart = await fetch(`https://api.lolhuman.xyz/api/random/art?apikey=${lolkeysapi}`);
+        conn.sendMessage(m.chat, { image: await fanart.buffer(), caption: '*🧧 فانرت*' }, { quoted: m });
+        m.react('🧧');
+    }
 
-if (command == 'هوسبو') {
-let husbu = await fetch(`https://api.lolhuman.xyz/api/random/husbu?apikey=${lolkeysapi}`)
-conn.sendMessage(m.chat, {image: husbu, caption: `*🚩 هوسبو*`.trim()}, {quoted: m})
-m.react('🚩')
-}
+    if (command == 'هوسبو') {
+        let husbu = await fetch(`https://api.lolhuman.xyz/api/random/husbu?apikey=${lolkeysapi}`);
+        conn.sendMessage(m.chat, { image: await husbu.buffer(), caption: '*🚩 هوسبو*' }, { quoted: m });
+        m.react('🚩');
+    }
 
-if (command == 'كانا') {
-let kanna = await fetch(`https://api.lolhuman.xyz/api/random/kanna?apikey=${lolkeysapi}`)
-conn.sendMessage(m.chat, {image: kanna, caption: `*🍧 كانا*`.trim()}, {quoted: m})
-m.react('🍧')
-}
+    if (command == 'كانا') {
+        let kanna = await fetch(`https://api.lolhuman.xyz/api/random/kanna?apikey=${lolkeysapi}`);
+        conn.sendMessage(m.chat, { image: await kanna.buffer(), caption: '*🍧 كانا*' }, { quoted: m });
+        m.react('🍧');
+    }
 
 if (command == 'ميغومين') {
 let megumin = await fetch(`https://api.lolhuman.xyz/api/random/megumin?apikey=${lolkeysapi}`)
