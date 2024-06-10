@@ -25,13 +25,23 @@ const dir = [
 'https://telegra.ph/file/9b073bf9f85edf994f015.mp4',
 'https://telegra.ph/file/6ba2df16d65f6ec9bb0c3.mp4',
 'https://telegra.ph/file/fb61ad501912bd696f0f6.mp4',
+'https://telegra.ph/file/83a8cd84d42745c748bb3.mp4', 
+'https://telegra.ph/file/75bb562381bf73391a3fd.mp4', 
+'https://telegra.ph/file/e279fd0aca204c8583b21.mp4', 
+'https://telegra.ph/file/62d2520e438580fa13cd5.mp4', 
+'https://telegra.ph/file/e41985f25d31b99df2ca5.mp4', 
+'https://telegra.ph/file/45d9a036c5d81069d7e22.mp4', 
+'https://telegra.ph/file/c7f3222e37050b4acacd7.mp4', 
+'https://telegra.ph/file/5b7441d496a85efd0a347.mp4', 
+'https://telegra.ph/file/9bd9ea5ec6fa6a0c7a7e9.mp4', 
 
 ];
 let handler = async (m, { conn }) => {
   conn.sendFile(m.chat, dir[Math.floor(Math.random() * dir.length)], 'dado.webp', '', m)
+  m.react('🎧');
 }
 handler.help = ['dado']
 handler.tags = ['game']
-handler.command = ['edit', 'ايديت-اغنيه'] 
+handler.command = ['edit6', 'ايديت-اغنيه'] 
 
 export default handler
