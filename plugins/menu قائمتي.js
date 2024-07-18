@@ -40,6 +40,6 @@ let str = `                  ✥━─━⌬ 𝑮𝒐𝒌𝒖_𝒃𝒐𝒕 ⌬�
 
 handler.help = ['main']
 handler.tags = ['group']
-handler.command = ['قائمتي' ,'قايمه','القايمه']
+handler.command = ['اناا' ,'قايمه','القايمه']
 handler.rowner = true
 export default handler
