@@ -2,7 +2,7 @@ import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath, pathToFileURL } from 'url'
 
-global.owner = [['212601064446', '🌩️ ẉa.me/AFROTO‖.peị!‽ 👑', true], 
+global.owner = [['201067999523', '🌩️ ẉa.me/AFROTO‖.peị!‽ 👑', true], 
  ['201067999523', '🌩️ ẉa.me/AFROTO‖.peị!‽ 👑', true],  ['212601064446'], ['201067999523'], ['212601064446'], ['201067999523'], ['201067999523'], ['201067999523'], ['212601064446'], ['201067999523'], ['212601064446']]
 
 //BETA: Si quiere evitar escribir el número que será bot en la consola, agregué desde aquí entonces:
